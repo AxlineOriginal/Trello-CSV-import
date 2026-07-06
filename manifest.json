@@ -1,0 +1,20 @@
+{
+  "name": "CSV/Excel Table Importer",
+  "details": "Import CSV or Excel files, view them as a table on a card, and optionally turn each row into its own card.",
+  "icon": {
+    "url": "https://cdn-icons-png.flaticon.com/128/8242/8242996.png"
+  },
+  "author": "you",
+  "capabilities": [
+    "card-badges",
+    "card-buttons",
+    "card-back-section",
+    "board-buttons"
+  ],
+  "connectors": {
+    "iframe": {
+      "url": "https://YOUR_DOMAIN_HERE/index.html"
+    }
+  },
+  "capabilities_url": "https://YOUR_DOMAIN_HERE/manifest.json"
+}

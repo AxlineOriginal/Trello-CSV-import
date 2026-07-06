@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font-family: -apple-system, Helvetica, Arial, sans-serif; padding: 10px; font-size: 13px; color: #172b4d; }
+    input[type=file] { margin-bottom: 10px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 8px; font-size: 12px; }
+    th, td { border: 1px solid #dfe1e6; padding: 4px 6px; text-align: left; white-space: nowrap; }
+    th { background: #f4f5f7; }
+    .tablewrap { max-height: 260px; overflow: auto; border: 1px solid #dfe1e6; }
+    .row { margin-top: 10px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    button { padding: 6px 12px; background: #0079bf; color: #fff; border: none; border-radius: 3px; cursor: pointer; }
+    button:disabled { background: #a5adba; cursor: not-allowed; }
+    button.secondary { background: #f4f5f7; color: #172b4d; }
+    select { padding: 5px; }
+    .status { margin-top: 8px; font-size: 12px; }
+    .status.ok { color: #216e4e; }
+    .status.err { color: #ae2e24; }
+    .hint { color: #5e6c84; font-size: 11px; margin-top: 4px; }
+  </style>
+  <script src="https://p.trello.com/power-up.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+  <input type="file" id="fileInput" accept=".csv,.xlsx,.xls">
+  <div class="hint">CSV or Excel (.xlsx/.xls). First row is treated as headers.</div>
+
+  <div class="tablewrap" id="preview"></div>
+
+  <div class="row">
+    <button id="saveBtn" disabled>Save table to card</button>
+    <span id="saveStatus" class="status"></span>
+  </div>
+
+  <div class="row">
+    <label>Target list for new cards:</label>
+    <select id="listSelect"></select>
+  </div>
+  <div class="row">
+    <label>Card title column:</label>
+    <select id="titleColSelect"></select>
+    <button id="convertBtn" disabled>Convert rows to cards</button>
+  </div>
+  <div id="convertStatus" class="status"></div>
+
+  <script src="./import.js"></script>
+</body>
+</html>

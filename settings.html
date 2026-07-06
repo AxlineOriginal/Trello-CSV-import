@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font-family: -apple-system, Helvetica, Arial, sans-serif; padding: 12px; font-size: 13px; }
+    input { width: 100%; box-sizing: border-box; padding: 6px; margin: 6px 0; }
+    a { color: #0079bf; }
+    button { padding: 6px 12px; background: #0079bf; color: #fff; border: none; border-radius: 3px; cursor: pointer; }
+    .status { margin-top: 8px; color: #216e4e; }
+  </style>
+  <script src="https://p.trello.com/power-up.min.js"></script>
+</head>
+<body>
+  <p>To let this Power-Up create cards from imported rows, it needs a Trello token (in addition to your app key, set in <code>settings.js</code>).</p>
+  <p><a id="authLink" href="#" target="_blank">1. Click here to generate a token</a></p>
+  <p>2. Paste the token below:</p>
+  <input id="tokenInput" type="text" placeholder="paste token here">
+  <button id="saveBtn">Save token</button>
+  <div class="status" id="status"></div>
+  <script src="./settings.js"></script>
+</body>
+</html>
